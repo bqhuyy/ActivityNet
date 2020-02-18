@@ -130,6 +130,7 @@ def download_clip_wrapper(row, label_to_dir, trim_format, tmp_dir):
                                     row['start-time'], row['end-time'],
                                     tmp_dir=tmp_dir)
     status = tuple([clip_id, downloaded, log])
+    print(status)
     return status
 
 
