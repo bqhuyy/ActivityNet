@@ -78,7 +78,6 @@ def download_clip(video_identifier, output_filename,
     tmp_filename = os.path.join(tmp_dir,
                                 '%s.%%(ext)s' % uuid.uuid4())
     command = ['youtube-dl',
-               '--quiet', '--no-warnings',
                '-f', 'mp4',
                '-o', '"%s"' % tmp_filename,
                '"%s"' % (url_base + video_identifier)]
@@ -103,7 +102,7 @@ def download_clip(video_identifier, output_filename,
                '-t', str(end_time - start_time),
                '-c:v', 'libx264', '-c:a', 'copy',
                '-threads', '1',
-               '-loglevel', 'panic',
+               '-loglevel', 'verbose',
                '"%s"' % output_filename]
     command = ' '.join(command)
     try:
